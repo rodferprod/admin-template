@@ -1,4 +1,4 @@
-Admin Template
+Admin Template - https://admin-template-weld-six.vercel.app/
 
 Private section that need authentication to access a basic admin layout
 
