@@ -14,6 +14,7 @@ Resources:
 - Context API
 - Component state management
 - Dynamic API URL's
+- CRUD Operations
 - Tailwind
 
 

@@ -12,6 +12,7 @@ export default function Notificacoes() {
                 {dados => <h3>{dados.tema}</h3>}
             </AppConsumer>
             */}
+            <h3>Mensagens do sistema</h3>
         </Layout>
     );
 }

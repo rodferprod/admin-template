@@ -6,7 +6,7 @@ export default class TabelaCliente implements ClienteRepositorio {
     
     #conversor = {
         toFirestore(cliente: Cliente) {
-            console.log('conversor (toFirestore):', cliente)
+            //console.log('conversor (toFirestore):', cliente)
             return {
                 nome: cliente.nome,
                 idade: cliente.idade,
@@ -17,7 +17,7 @@ export default class TabelaCliente implements ClienteRepositorio {
             options: firebase.firestore.SnapshotOptions
         ){
             const dados = snapshot.data(options)
-            console.log('conversor (fromFirestore):', dados)
+            //console.log('conversor (fromFirestore):', dados)
             return new Cliente(snapshot?.id, dados.nome, dados.idade, )
         }
     }
@@ -25,19 +25,19 @@ export default class TabelaCliente implements ClienteRepositorio {
     async salvar(cliente: Cliente): Promise<Cliente> {
         // Se existe cliente, alterar...
         if(cliente?.id) {
-            console.log('alterar (existe id):', cliente)
+            //console.log('alterar (existe id):', cliente)
             await this.colecao().doc(cliente.id).set(cliente)
-            console.log('retornando cliente após alterar:', cliente)
+            //console.log('retornando cliente após alterar:', cliente)
             return cliente
         } else {
             // Novo cliente...
-            console.log('salvar novo cliente:', cliente)
+            //console.log('salvar novo cliente:', cliente)
             const docRef = await this.colecao().add(cliente)
-            console.log('docRef:', docRef)
+            //console.log('docRef:', docRef)
             const doc = await docRef.get()
-            console.log('doc:', doc)
+            //console.log('doc:', doc)
             const res = doc.data()
-            console.log('res:', res)
+            //console.log('res:', res)
             if(res){
                 return res
             } else {
@@ -52,9 +52,9 @@ export default class TabelaCliente implements ClienteRepositorio {
 
     async listar(): Promise<Cliente[]> {
         const query = await this.colecao().get()
-        console.log('listar (query):', query)
+        //console.log('listar (query):', query)
         const docs = query.docs.map(doc => doc.data()) ?? []
-        console.log('listar (docs):', docs)
+        //console.log('listar (docs):', docs)
         return docs
     }
 

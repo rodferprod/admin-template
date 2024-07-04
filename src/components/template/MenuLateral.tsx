@@ -1,4 +1,4 @@
-import { IconExit, IconHome, IconNotifications, IconSettings } from "../icons";
+import { IconExit, IconHome, IconNotifications, IconSettings, IconUsers } from "../icons";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 import router from 'next/router'
@@ -40,6 +40,10 @@ export default function MenuLateral() {
                     url="/notificacoes"
                     texto="Notificações"
                     icone={IconNotifications} />
+                <MenuItem
+                    url="/clientes"
+                    texto="Clientes"
+                    icone={IconUsers(6)} />
             </ul>
             <ul>
                 <MenuItem

@@ -30,25 +30,25 @@ export default function useClientes() {
     }
 
     function editarCliente(cliente: Cliente) {
-        console.log('Editar cliente ' + cliente.nome)
+        //console.log('Editar cliente ' + cliente.nome)
         setCliente(cliente)
         exibirFormulario()
     }
 
     async function excluirCliente(cliente: Cliente) {
-        console.log('Excluir cliente ' + cliente.nome)
+        //console.log('Excluir cliente ' + cliente.nome)
         await repo.excluir(cliente)
         listar()
     }
 
     async function salvandoCliente(cliente: Cliente) {
-        console.log('salvandoCliente:', cliente)
+        //console.log('salvandoCliente:', cliente)
         await repo.salvar(cliente)
         listar()
     }
 
     function novoCliente() {
-        console.log('novoCliente')
+        //console.log('novoCliente')
         setCliente(Cliente.vazio)
         exibirFormulario()
     }
