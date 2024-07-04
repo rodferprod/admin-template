@@ -2,7 +2,7 @@ Admin Template
 
 Private section that need authentication to access a basic admin layout
 
-Technology:
+Technologies:
 - NextJS/ReactJS
 - Typescript
 - Firebase
